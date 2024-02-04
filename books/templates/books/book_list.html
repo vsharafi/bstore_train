@@ -23,11 +23,7 @@
         </p>
         <div class="flex flex-row-reverse items-center justify-between">
           <p class="text-right text-gray-400 text-sm">{{book.author}}</p>
-          <button
-            class="rounded-lg px-2 py-1 bg-[#0D1B2A] text-[#E0E1DD] hover:bg-[#778DA9]"
-          >
-            اطلاعات بیشتر
-          </button>
+          <a href="{% url 'book_detail' pk=book.pk %}" class="rounded-lg px-2 py-1 bg-[#0D1B2A] text-[#E0E1DD] hover:bg-[#778DA9]">اطلاعات بیشتر</a>
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@
           >
             <li class="hover:text-[#778DA9]"><a href="{% url 'home' %}">خانه</a></li>
             <li class="hover:text-[#778DA9]">Books List</li>
-            <li class="hover:text-[#778DA9]">New Book</li>
+            <li class="hover:text-[#778DA9]"><a href="{% url 'book_create' %}">اضافه کردن کتاب</a></li>
           </ul>
           {% if user.is_authenticated %}
           <div class="flex flex-col gap-5 md:flex-row-reverse items-center">
