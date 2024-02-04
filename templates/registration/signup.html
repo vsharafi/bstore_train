@@ -1,0 +1,35 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'registration/signup.css' %}">
+{% endblock css %}
+{% block page_title %}ثبت نام{% endblock page_title %}
+
+{% block content %}
+<div class="w-80 mx-auto ">
+    <div class="text-center border-2 shadow-2xl p-5" >
+      <h1 class="text-4xl font-bold mb-6">ثبت نام</h1>
+      <form class="flex flex-col" action="" method="post">
+        {% csrf_token %}
+        <label class="py-1 font-bold text-right" for="username">نام کاربری</label>
+        {% render_field form.username class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="username" id="username" %}
+        <label class="py-1 font-bold text-right" for="email">ایمیل</label>
+        {% render_field form.email class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="email" id="email" %}
+        <label class="py-1 font-bold text-right" for="age">سن</label>
+        {% render_field form.age class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="age" id="age" %}
+        <label class="py-1 font-bold text-right" for="pass1">رمز عبور</label>
+        {% render_field form.password1 class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="pass1" id="pass1" %}
+        <label class="py-1 font-bold text-right" for="pass2">تکرار رمز عبور</label>
+        {% render_field form.password2 class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="pass2" id="pass2" %}
+        <button class="py-2 font-bold bg-[#0D1B2A] hover:bg-[#415A77] focus:ring-4 focus:ring-[#598392] rounded-lg px-2 text-white mt-5" type="submit">ثبت نام</button>
+        <div class="relative flex py-5 items-center">
+          <div class="flex-grow border-t border-[#0D1B2A]"></div>
+          <span class="flex-shrink mx-4 text-[#0D1B2A]">یا در سایت عضو هستید؟</span>
+          <div class="flex-grow border-t border-[#0D1B2A]"></div>
+        </div>
+        <a href="{% url 'login' %}" class="w-full py-2 font-bold rounded-lg px-2 mt-1 border-2 bg-[#124559] text-white hover:bg-[#778DA9] focus:ring-4 focus:ring-[#598392]">ورود</a>  
+      </form>
+</div>
+  </div>
+{% endblock content %}

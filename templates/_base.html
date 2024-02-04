@@ -36,16 +36,16 @@
             <li class="hover:text-[#778DA9]">New Book</li>
           </ul>
           {% if user.is_authenticated %}
-          kir
-          {% endif %}
+          <div class="flex flex-col gap-5 md:flex-row-reverse items-center">
+            <p>{{user.username}} سلام</p>
+            <form action="{% url 'logout' %}" method="post">{% csrf_token %}<button class="bg-[#0D1B2A] hover:bg-[#415A77] rounded-lg px-2 py-1 md:bg-[#E0E1DD] md:text-[#0D1B2A] md:hover:bg-[#778DA9]" type="submit">خروج</button></form>
+          </div>
+          {% else %}
           <div class="flex flex-col gap-5 md:flex-row-reverse">
             <a class="bg-[#0D1B2A] hover:bg-[#415A77] rounded-lg px-2 py-1 md:bg-[#E0E1DD] md:text-[#0D1B2A] md:hover:bg-[#778DA9]" href="{% url 'login' %}">ورود</a>
-            <button
-              class="bg-[#0D1B2A] hover:bg-[#415A77] rounded-lg px-2 py-1 md:bg-[#E0E1DD] md:text-[#0D1B2A] md:hover:bg-[#778DA9]"
-            >
-              Sign Up
-            </button>
+            <a class="bg-[#0D1B2A] hover:bg-[#415A77] rounded-lg px-2 py-1 md:bg-[#E0E1DD] md:text-[#0D1B2A] md:hover:bg-[#778DA9]" href="{% url 'signup' %}">ثبت نام</a>
           </div>
+          {% endif %}
         </div>
 
         <div class="md:hidden">
