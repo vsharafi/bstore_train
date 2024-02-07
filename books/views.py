@@ -32,6 +32,12 @@ class BookUpdateView(generic.UpdateView):
     def form_valid(self, form):
         if form.has_changed():
             form.save()
-            return redirect('form_detail', pk=self.object.pk)
+            return redirect('book_detail', pk=self.object.pk)
         else:
             return redirect('book_update', pk=self.object.pk)
+
+
+class BookDeletView(generic.DeleteView):
+    model = Book
+    template_name = 'books/book_delete.html'
+    success_url = reverse_lazy('home')
