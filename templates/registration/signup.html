@@ -14,14 +14,19 @@
         {% csrf_token %}
         <label class="py-1 font-bold text-right" for="username">نام کاربری</label>
         {% render_field form.username class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="username" id="username" %}
+        <!-- <small style="color: grey">{{ form.username.help_text }}</small> -->
+        <p style="color: red">{{ form.username.errors }}</p>
         <label class="py-1 font-bold text-right" for="email">ایمیل</label>
         {% render_field form.email class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="email" id="email" %}
+        <!-- <small style="color: grey">{{ form.email.help_text }}</small> -->
         <label class="py-1 font-bold text-right" for="age">سن</label>
         {% render_field form.age class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="age" id="age" %}
         <label class="py-1 font-bold text-right" for="pass1">رمز عبور</label>
         {% render_field form.password1 class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="pass1" id="pass1" %}
+        <!-- <small style="color: grey">{{ form.password1.help_text }}</small> -->
         <label class="py-1 font-bold text-right" for="pass2">تکرار رمز عبور</label>
         {% render_field form.password2 class+="py-1 w-full border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mtx-1 mb-4" name="pass2" id="pass2" %}
+        <!-- <small style="color: grey">{{ form.password2.help_text }}</small> -->
         <button class="py-2 font-bold bg-[#0D1B2A] hover:bg-[#415A77] focus:ring-4 focus:ring-[#598392] rounded-lg px-2 text-white mt-5" type="submit">ثبت نام</button>
         <div class="relative flex py-5 items-center">
           <div class="flex-grow border-t border-[#0D1B2A]"></div>

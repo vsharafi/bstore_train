@@ -11,11 +11,20 @@
     <div
       class="flex flex-col w-full mx-auto md:flex-row-reverse md:justify-between md:items-start items-center object-cover gap-6 mb-9"
     >
+    {% if book.cover %}
+        <img
+        src="{{book.cover.url}}"
+        class="h-[400px] md:h-[350px]"
+        alt="..."
+      />
+      {% else %}
+    
       <img
         src="{% static 'a1920866-3684-41b3-879a-4ccbc0060ac5.webp' %}"
         class="h-[400px] md:h-[350px]"
         alt="..."
       />
+      {% endif %}
       <div
         class="flex flex-col md:flex-row-reverse w-full md:justify-between items-center"
       >
@@ -29,7 +38,7 @@
       </div>
     </div>
     <p dir="rtl">{{ book.description|linebreaksbr }}</p>
-    <div class="text-center mt-8">
+    <div class="text-center mt-10">
       <a class="py-2 px-2 font-bold bg-[#0D1B2A] hover:bg-[#415A77] focus:ring-4 focus:ring-[#598392] rounded-lg text-white ml-4" href="{% url 'book_update' pk=book.pk %}">ویرایش</a>
       <a class="py-2 px-4 font-bold rounded-lg mt-1 border-2 bg-[#124559] text-white hover:bg-[#778DA9] focus:ring-4 focus:ring-[#598392]" href="{% url 'book_delete' book.pk %}">حذف</a>
     </div>

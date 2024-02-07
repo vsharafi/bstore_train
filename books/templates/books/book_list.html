@@ -10,7 +10,12 @@
   {% for book in books %}
   <div class="flex flex-col lg:flex-row-reverse items-center md:flex-col sm:flex-row-reverse w-5/12  md:basis-5/12 basis-4/5 text-[#1B263B] bg-[#E0E1DD] rounded-lg p-3">
     <div class="">
-      <img class="rounded-sm object-cover max-h-72 min-w-44 hover:shadow-xl hover:opacity-70 shadow-black" src="{% static 'a1920866-3684-41b3-879a-4ccbc0060ac5.webp' %}" alt="..."/>
+      {% if book.cover %}
+        <img class="rounded-sm object-cover max-h-72 min-w-44 hover:shadow-xl hover:opacity-70 shadow-black" src="{{book.cover.url}}" alt="..."/>
+
+      {% else %}
+        <img class="rounded-sm object-cover max-h-72 min-w-44 hover:shadow-xl hover:opacity-70 shadow-black" src="{% static 'a1920866-3684-41b3-879a-4ccbc0060ac5.webp' %}" alt="..."/>
+      {% endif %}
     </div>
     <div class="px-4 flex flex-col">
       <div class="flex flex-row-reverse justify-between py-3 w-full">

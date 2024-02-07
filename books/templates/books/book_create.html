@@ -11,7 +11,7 @@
     <div class="w-full border-2 shadow-2xl text-right rounded">
       <h1 class="bg-[#0D1B2A] text-[#E0E1DD] px-10 text-2xl py-3 rounded">افزودن کتاب</h1>
       <div dir="rtl" class="px-10 text-lg py-7">    
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <label  class="py-1 font-bold" for="title">عنوان</label>
             {% render_field form.title name="title" id="title" class+=" w-full py-1 border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mt-1 mb-4" %}
@@ -21,6 +21,8 @@
             {% render_field form.price name="price" id="price" class=" w-full py-1 border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mt-1 mb-4" %}
             <label  class="py-1 font-bold" for="desc">توضیحات</label>
             {% render_field form.description class="mb-2 mt-1 w-full h-32 p-2 rounded border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392]" name="desc" id="desc" %}
+            <label  class="py-1 font-bold" for="cover">جلد کتاب</label>
+            {% render_field form.cover name="cover" id="cover" class=" w-full py-1 border-2 border-[#0D1B2A] focus:outline-none px-2 focus:ring-4 focus:ring-[#598392] rounded mt-1 mb-4" %}
             <button class="py-2 font-bold bg-[#0D1B2A] hover:bg-[#415A77] focus:ring-4 focus:ring-[#598392] rounded-lg px-4 text-white mt-5" type="submit">ذخیره</button>
         </form>
       </div>
