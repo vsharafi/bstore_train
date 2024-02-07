@@ -5,10 +5,13 @@ from .models import Book
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 
+
+
 class BookListView(generic.ListView):
     template_name = 'books/book_list.html'
     model = Book
     context_object_name = 'books'
+    paginate_by = 4
     # def get_queryset(self):
     #     return Book.objects.all().order_by('title')
     
